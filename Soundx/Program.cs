@@ -1,4 +1,4 @@
-﻿string boasVindas = "Seja bem vindo ao Soundx!";
+string boasVindas = "Seja bem vindo ao Soundx!";
 //List<string> listaDeBandas = new List<string> { "U2", "Beatles", "Sepultura"};
 
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();//DIcionário bandas registradas pelo usuario
@@ -62,7 +62,7 @@ void MostrarMenu()
             break;
         case 0:
             Console.Clear();
-            ExibirTitulo("Obrigado por usar o Soundx! Até a próxima!");
+            ExibirTitulo("Obrigado por usar o SundX");
             break;
         default:
             OpcaoInvalida();
@@ -73,16 +73,15 @@ void MostrarMenu()
 void RegistrarBandas()
 {
     Console.Clear();
-    ExibirTitulo("Registro das bandas");
+    ExibirTitulo("Registro das bandas\n");
 
     Console.Write("Digite o nome da banda que deseja registrar: ");
     string nomeBanda = Console.ReadLine()!;
     bandasRegistradas.Add(nomeBanda, new List<int>());
 
-    Console.WriteLine($"A banda {nomeBanda} foi registrada!");
-    Thread.Sleep(2000); // Pausa de 2 segundos para o usuário ler a mensagem
-    Console.Clear();
-    MostrarMenu();
+    Console.WriteLine($"\nA banda {nomeBanda} foi registrada!\n");
+    Thread.Sleep(1000); // Pausa de 2 segundos para o usuário ler a mensagem
+    FinalizacaoDeCaso();
 }
 
 void MostrarBandasRegistradas()
@@ -154,7 +153,6 @@ void ExibirMedia()
     {
         Console.WriteLine($"\nA banda {nomeBanda} não está registrada.\n");
     }
-    FinalizacaoDeCaso();
 }
 
 void OpcaoInvalida()
@@ -162,5 +160,11 @@ void OpcaoInvalida()
     Console.WriteLine("\nOpcao Invalida, tente novamente\n");
     FinalizacaoDeCaso();
 }
+
+/*void FuncaoSair()
+{
+    Console.Clear();
+    ExibirTitulo("Obrigado por usar o Soundx! Até a próxima!");
+}*/
 
 MostrarMenu();
